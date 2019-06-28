@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" href="dist/style.css">
+    <style>
+      .carousel {
+        max-width: 600px;
+        margin: 0 auto;
+      }
+      img {
+        max-width: 100%;
+        display: block;
+        padding: .5em;
+      }
+      .box {
+        font-family: Arial, Helvetica, sans-serif;
+        height: 150px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: rgb(81, 158, 81);
+        border: 3px solid #FFF;
+        border-radius: 8px;
+        color: #FFF;
+        font-size: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="carousel">
+      <div>
+        <div class="box">1</div>
+      </div>
+      <div>
+        <div class="box">2</div>
+      </div>
+      <div>
+        <div class="box">3</div>
+      </div>
+      <div>
+        <div class="box">4</div>
+      </div>
+      <div>
+        <div class="box">5</div>
+      </div>
+      <div>
+        <div class="box">6</div>
+      </div>
+      <div>
+        <div class="box">7</div>
+      </div>
+    </div>
+
+    <script src="dist/index.min.js"></script>
+    <script>
+      var carousel = new ElderCarousel('.carousel')
+    </script>
+  </body>
+</html>
