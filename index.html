@@ -1,63 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
-    <link rel="stylesheet" href="dist/style.css">
-    <style>
-      .carousel {
-        max-width: 600px;
-        margin: 0 auto;
-      }
-      img {
-        max-width: 100%;
-        display: block;
-        padding: .5em;
-      }
-      .box {
-        font-family: Arial, Helvetica, sans-serif;
-        height: 150px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background: rgb(81, 158, 81);
-        border: 3px solid #FFF;
-        border-radius: 8px;
-        color: #FFF;
-        font-size: 20px;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="carousel">
-      <div>
-        <div class="box">1</div>
-      </div>
-      <div>
-        <div class="box">2</div>
-      </div>
-      <div>
-        <div class="box">3</div>
-      </div>
-      <div>
-        <div class="box">4</div>
-      </div>
-      <div>
-        <div class="box">5</div>
-      </div>
-      <div>
-        <div class="box">6</div>
-      </div>
-      <div>
-        <div class="box">7</div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+  <title>Document</title>
+  <link rel="stylesheet" href="dist/style.css">
+  <style>
+    body {
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Nunito;
+    }
+    .container {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .carousel {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+      padding: .5em;
+    }
+    .example-box {
+      margin-bottom: 50px;
+      /* box-shadow: 0 2px 5px rgba(0,0,0,.4); */
+      padding: 1em;
+      border-radius: 12px;
+      border: 1px solid #DFDFDF;
+    }
+    .example-box h2 {
+      margin: 0 0 20px !important;
+    }
+    .box {
+      font-family: Arial, Helvetica, sans-serif;
+      height: 150px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-image: linear-gradient(to bottom right, #2193b0, #6dd5ed);
+      border: 3px solid #FFF;
+      border-radius: 8px;
+      color: #FFF;
+      font-size: 26px;
+    }
+    .text-center {
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+    <h1 class="text-center">Elder Carousel</h1>
+
+    <!-- SINGLE ITEM -->
+    <div class="example-box">
+      <h2>Single Item</h2>
+      <div class="carousel-single-item">
+        <div>
+          <div class="box">1</div>
+        </div>
+        <div>
+          <div class="box">2</div>
+        </div>
+        <div>
+          <div class="box">3</div>
+        </div>
       </div>
     </div>
 
-    <script src="dist/index.min.js"></script>
-    <script>
-      var carousel = new ElderCarousel('.carousel')
-    </script>
-  </body>
+    <!-- MULTIPLE ITEMS -->
+    <div class="example-box">
+      <h2>Multiple Items</h2>
+      <div class="carousel-multiple-items">
+        <div>
+          <div class="box">1</div>
+        </div>
+        <div>
+          <div class="box">2</div>
+        </div>
+        <div>
+          <div class="box">3</div>
+        </div>
+        <div>
+          <div class="box">4</div>
+        </div>
+        <div>
+          <div class="box">5</div>
+        </div>
+        <div>
+          <div class="box">6</div>
+        </div>
+        <div>
+          <div class="box">7</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="dist/index.min.js"></script>
+  <script>
+    new ElderCarousel('.carousel-single-item', { items: 1, infinite: false })
+
+    new ElderCarousel('.carousel-multiple-items', { items: 3 })
+
+  </script>
+</body>
+
 </html>

@@ -23,14 +23,10 @@ function jsTask() {
     }))
     // .pipe(uglify({}))
     .pipe(rename({ suffix: '.min' }))
-    .pipe(browserSync.stream({match: 'src/*.js'}))
+    .pipe(sourcemaps.write('.'))
     .pipe(dest('./dist'))
+    .pipe(browserSync.stream({match: 'src/*.js'}))
 }
-
-// task('jsWatch', ['jsTask'], function(done) {
-//   browserSync.reload();
-//   done();
-// })
 
 function browserSyncTask() {
   browserSync.init({
@@ -39,8 +35,8 @@ function browserSyncTask() {
     }
   });
 
-  watch('src/style.scss', sassTask);
-  watch("src/*.js", jsTask);
+  watch('./src/style.scss', sassTask).on('change', browserSync.reload);
+  watch("./src/*.js", jsTask).on('change', browserSync.reload);
   watch("./*.html").on('change', browserSync.reload);
 };
 

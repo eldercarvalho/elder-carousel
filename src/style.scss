@@ -1,21 +1,21 @@
-.el-carousel {
+.ec {
   position: relative;
-  .el-carousel__holder {
+  .ec__holder {
     overflow: hidden;
   }
-  .el-carousel__track {
-    transition: transform .3s ease-in-out;
+  .ec__track {
+    will-change: transform;
     &:after {
       content: '';
       display: table;
       clear: both;
     }
   }
-  .el-carousel__item {
+  .ec__item {
     float: left;
     overflow: hidden;
   }
-  .el-carousel__pagination {
+  .ec__pagination {
     text-align: center;
     margin-top: 10px;
 
@@ -34,14 +34,14 @@
       }
     }
   }
-  .el-carousel__nav {
+  .ec__nav {
     position: absolute;
-    top: 50%;
+    bottom: 10px;
     border-top: 2px solid #000;
     border-right: 2px solid #000;
     width: 8px;
     height: 8px;
-    transform: translateY(-50%);
+    // transform: translateY(-50%);
     cursor: pointer;
     &:before {
       content: ''
